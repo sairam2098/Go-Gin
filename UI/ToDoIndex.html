@@ -1,0 +1,47 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        h1 {text-align: center;}
+        table, th, td {
+        border: 1px solid gray;
+        border-collapse: collapse;
+        }
+
+        table {
+        border-collapse: collapse;
+        width: 40%;
+        }
+
+        #ListToDo {
+        margin-left: auto; 
+        margin-right: auto;
+        }
+    </style>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="ToDo.js"></script>
+</head>
+<body>
+    <br/>
+    <h1>Shopping</h1>
+    <div style="text-align: center;">
+        <input type="text" id="ToDoId" placeholder="Enter the category">
+        <button onclick="getByCategory()" style="text-align: center;">Get Items</button>
+        <br/>
+        <br/>
+        <br/>
+        <p id="Description"></p>
+        <table id="ListToDo">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        </table>
+        <br/>
+        <br/>
+        <br/>
+        <button onclick="getByCategory()" style="text-align: center;">Create Items</button>
+    </div>
+</body>
+</html>
