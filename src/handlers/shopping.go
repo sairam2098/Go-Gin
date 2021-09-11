@@ -29,3 +29,19 @@ func GetItemsByCategory(ctx *gin.Context) {
 	}
 	ctx.JSON(http.StatusOK, items)
 }
+
+func PostItems(ctx *gin.Context) {
+	var params models.NewItems
+	err := ctx.ShouldBindJSON(&params)
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	err = ShoppingService.PostItems(params)
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	ctx.JSON(http.StatusOK, "OK")
+}

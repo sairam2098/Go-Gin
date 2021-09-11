@@ -25,23 +25,14 @@
     <br/>
     <h1>Shopping</h1>
     <div style="text-align: center;">
-        <input type="text" id="ToDoId" placeholder="Enter the category">
-        <button onclick="getByCategory()" style="text-align: center;">Get Items</button>
+        <input type="text" id="NewCategory" placeholder="Enter the category">
+        <input type="text" id="NewName" placeholder="Enter the name">
+        <input type="text" id="NewPrice" placeholder="Enter the price">
+        <input type="text" id="NewQuantity" placeholder="Enter the quantity">
         <br/>
         <br/>
         <br/>
-        <p id="Description"></p>
-        <table id="ListToDo">
-            <tr>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Quantity</th>
-            </tr>
-        </table>
-        <br/>
-        <br/>
-        <br/>
-        <a href="CreateItems.html"><button style="text-align: center;">Create Items</button></a>
+        <a href="ToDoIndex.html"><button onclick="postItem()" style="text-align: center;">Create Item</button></a>
     </div>
 </body>
 </html>

@@ -1,6 +1,8 @@
 package dal
 
 import (
+	"fmt"
+
 	"github.com/jmoiron/sqlx"
 
 	"gogin/src/models"
@@ -32,4 +34,16 @@ func (Dal) GetItemsByCategory(db *sqlx.DB, category string) ([]models.Items, err
 	}
 
 	return items, nil
+}
+
+func (Dal) PostItems(db *sqlx.DB, item models.NewItems) error {
+	getAllQuery := `INSERT INTO items (name, category, price, quantity) VALUE ("` + item.Name + `", "` + item.Category + `", ` + item.Price + `, ` + item.Quantity + `)`
+	fmt.Println(getAllQuery)
+	_, err := db.Exec(getAllQuery)
+
+	if err != nil {
+		return err
+	}
+
+	return nil
 }

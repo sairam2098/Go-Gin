@@ -16,3 +16,24 @@ function getByCategory(){
             alert("Internal Error")
         });
 }
+
+function postItem(){
+    var categoryObj = document.getElementById('NewCategory').value;
+    var nameObj = document.getElementById('NewName').value;
+    var priceObj = document.getElementById('NewPrice').value;
+    var quantityObj = document.getElementById('NewQuantity').value;
+    
+    const data = { category: categoryObj, name: nameObj, price: priceObj, quantity: quantityObj };
+
+    fetch('http://localhost:7999/newitems', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    }).then((resp) => {
+        if(resp.status != 200) {
+            alert("Internal Error");
+        }
+   });
+}

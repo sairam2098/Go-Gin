@@ -39,3 +39,16 @@ func (ShoppingService) GetItemsByCategory(category string) ([]models.Items, erro
 	items, err := shoppingDal.GetItemsByCategory(db, category)
 	return items, err
 }
+
+func (ShoppingService) PostItems(item models.NewItems) error {
+	db, err := da.Connect()
+	defer da.Close(db)
+	if err != nil {
+		msg := err.Error()
+		fmt.Print(msg)
+		return err
+	}
+
+	err = shoppingDal.PostItems(db, item)
+	return err
+}

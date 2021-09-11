@@ -36,5 +36,6 @@ func (*Router) NewRouter(router *gin.Engine) *gin.Engine {
 
 	router.GET("/items", GetItems)
 	router.GET("/items/by-category", GetItemsByCategory)
+	router.POST("/newitems", PostItems)
 	return router
 }
